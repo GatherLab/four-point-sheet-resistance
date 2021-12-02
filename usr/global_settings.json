@@ -1,0 +1,18 @@
+{
+    "overwrite": {
+        "keithley_source_address": "USB0::0x05E6::0x2450::04426583::INSTR",
+        "keithley_multimeter_address": "USB0::0x05E6::0x2100::8011801::INSTR",
+        "probe_spacing": 2.8725,
+        "applied_current": 5.0,
+        "measurement_interval": 5.0,
+        "default_saving_path": "C:\\Users\\GatherLab\\Documents\\Data"
+    },
+    "default": {
+        "keithley_source_address": "USB0::0x05E6::0x2450::04426583::INSTR",
+        "keithley_multimeter_address": "USB0::0x05E6::0x2100::8011801::INSTR",
+        "probe_spacing": 2.8725,
+        "applied_current": 5.0,
+        "measurement_interval": 5.0,
+        "default_saving_path": "C:\\Users\\GatherLab\\Documents\\Data"
+    }
+}
