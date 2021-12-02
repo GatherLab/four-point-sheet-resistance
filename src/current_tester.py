@@ -40,8 +40,6 @@ class CurrentTester(QtCore.QThread):
         # Reset Arduino and Keithley
         self.keithley_multimeter = keithley_multimeter
         self.keithley_source = keithley_source
-        self.keithley_source.as_voltage_source(1050)
-        self.keithley_source.activate_output()
 
         # Connect signal to the updater from the parent class
         self.update_ammeter_signal.connect(parent.update_ammeter)

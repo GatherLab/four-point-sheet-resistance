@@ -48,9 +48,6 @@ class KeithleySource:
         # As a standard initialise the Keithley as a voltage source
         self.as_current_source(current_compliance)
 
-        # Set voltage mode indicator
-        self.mode = "voltage"
-
         # Reverse voltages
         self.reverse = 1
 
@@ -108,7 +105,9 @@ class KeithleySource:
         """
         self.mutex.lock()
         self.keith.write("*rst")
-        self.keith.write("Source:Volt:ILimit " + str(1.05))
+        self.keith.write(
+            "Source:Current:VLimit " + str(100)
+        )  # set voltage compliance to compliance
         self.mutex.unlock()
 
     def init_buffer(self, buffer_name, buffer_length):

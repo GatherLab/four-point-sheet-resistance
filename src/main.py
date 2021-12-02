@@ -168,21 +168,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.sw_long_side_length_spinBox.setMinimum(0)
         self.sw_long_side_length_spinBox.setMaximum(1000)
         self.sw_long_side_length_spinBox.setSingleStep(0.1)
-        self.sw_long_side_length_spinBox.setValue(12)
+        self.sw_long_side_length_spinBox.setValue(24)
         self.sw_long_side_length_spinBox.setKeyboardTracking(False)
 
         # Short Side Length
         self.sw_short_side_length_spinBox.setMinimum(0)
         self.sw_short_side_length_spinBox.setMaximum(1000)
         self.sw_short_side_length_spinBox.setSingleStep(0.1)
-        self.sw_short_side_length_spinBox.setValue(5)
+        self.sw_short_side_length_spinBox.setValue(2)
         self.sw_short_side_length_spinBox.setKeyboardTracking(False)
 
         # Short Side Length
         self.sw_thickness_spinBox.setMinimum(0)
         self.sw_thickness_spinBox.setMaximum(1000000)
         self.sw_thickness_spinBox.setSingleStep(0.1)
-        self.sw_thickness_spinBox.setValue(50)
+        self.sw_thickness_spinBox.setValue(90)
         self.sw_thickness_spinBox.setKeyboardTracking(False)
 
         # No of averages
@@ -420,7 +420,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         current_tester thread.
         """
         self.sw_applied_current_label_number.setText(
-            str(round(current_reading, 4)) + " mA"
+            str(round(current_reading, 4) * 1e3) + " mA"
         )
 
     @QtCore.Slot(float)
@@ -430,7 +430,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         current_tester thread.
         """
         self.sw_measured_voltage_label_number.setText(
-            str(round(voltage_reading, 4)) + " V"
+            str(round(voltage_reading, 6)) + " V"
         )
 
     @QtCore.Slot(float, float, float, float, float)
@@ -454,7 +454,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             str(round(sheet_resistance, 2)) + " Ω/□"
         )
         self.sw_resistivity_label_number.setText(str(round(resisitvity, 2)) + " Ω m")
-        self.sw_conductivity_label_number.setText(str(round(conductivity, 2)) + " S/m")
+        self.sw_conductivity_label_number.setText(
+            str(round(conductivity * 1e3, 2)) + " mS/m"
+        )
 
     def activate_output(self):
         """
@@ -463,6 +465,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.sw_activate_output_pushButton.isChecked():
             applied_current = cf.read_global_settings()["applied_current"]
             self.keithley_source.set_current(applied_current)
+            time.sleep(0.5)
             self.keithley_source.activate_output()
         else:
             self.keithley_source.deactivate_output()

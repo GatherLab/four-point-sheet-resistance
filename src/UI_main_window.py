@@ -538,7 +538,7 @@ class Ui_MainWindow(object):
             "}"
         )
         self.sw_conductivity_label_number.setObjectName("sw_conductivity_label_number")
-        self.sw_conductivity_label_number.setText("--.-- S/m")
+        self.sw_conductivity_label_number.setText("--.-- mS/m")
         self.sw_conductivity_label_HLayout.addWidget(self.sw_conductivity_label_number)
 
         self.vertical_layout_1.addLayout(self.sw_conductivity_label_HLayout)

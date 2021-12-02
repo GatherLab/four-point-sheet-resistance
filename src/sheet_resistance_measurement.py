@@ -83,6 +83,9 @@ class SheetResistanceMeasurement(QtCore.QThread):
         pydevd.settrace(suspend=False)
 
         self.keithley_source.activate_output()
+        time.sleep(2)
+        self.keithley_source.read_current()
+        self.keithley_multimeter.measure_voltage()
         # The finite width correction has to be done based on empirical
         # values (for rectangular shaped samples). Those can be found in
         # a separate file.
@@ -195,6 +198,7 @@ class SheetResistanceMeasurement(QtCore.QThread):
         self.hide_progress_bar.emit()
         self.current_tester.pause = False
         self.parent.sw_start_measurement_pushButton.setChecked(False)
+        self.keithley_source.deactivate_output()
 
     def save_data(self):
         """
