@@ -454,9 +454,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             str(round(sheet_resistance, 2)) + " Ω/□"
         )
         self.sw_resistivity_label_number.setText(str(round(resisitvity, 2)) + " Ω m")
-        self.sw_conductivity_label_number.setText(
-            str(round(conductivity * 1e3, 2)) + " mS/m"
-        )
+        self.sw_conductivity_label_number.setText(str(round(conductivity, 2)) + " S/cm")
 
     def activate_output(self):
         """

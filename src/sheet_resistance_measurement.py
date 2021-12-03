@@ -149,17 +149,18 @@ class SheetResistanceMeasurement(QtCore.QThread):
             # Check the shape of the sample
             if self.measurement_parameters["sample_geometry"] == "Rectangular":
                 # Actual Calculation
+                # For the thickness a conversion to cm is needed (10-7) to get the units right
                 resistivity = (
                     4.53236
-                    * self.measurement_parameters["thickness"]
+                    * (self.measurement_parameters["thickness"] * 1e-7)
                     * voltage_reading
                     / current_reading
                     * finite_thickness_correction
                     * finite_width_correction
                 )
 
-                sheet_resistance = (
-                    resistivity / self.measurement_parameters["thickness"]
+                sheet_resistance = resistivity / (
+                    self.measurement_parameters["thickness"] * 1e-7
                 )
                 conductivity = 1 / resistivity
 
@@ -258,7 +259,7 @@ class SheetResistanceMeasurement(QtCore.QThread):
 
         line07 = "### Measurement data ###"
         line08 = "Applied Current\t Measured Voltage\t Sheet resistivity\t Resisitivity\t Conductivity"
-        line09 = "mA\t V\t Ohm/sq\t Ohm m\t S/m\n"
+        line09 = "mA\t V\t Ohm/sq\t Ohm cm\t S/cm\n"
 
         header_lines = [
             line03,
