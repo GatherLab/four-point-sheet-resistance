@@ -189,7 +189,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.sw_no_of_averages_spinBox.setMinimum(1)
         self.sw_no_of_averages_spinBox.setMaximum(1000000)
         self.sw_no_of_averages_spinBox.setSingleStep(1)
-        self.sw_no_of_averages_spinBox.setValue(50)
+        self.sw_no_of_averages_spinBox.setValue(20)
         self.sw_no_of_averages_spinBox.setKeyboardTracking(False)
 
         # Update statusbar
