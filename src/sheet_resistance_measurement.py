@@ -249,12 +249,12 @@ class SheetResistanceMeasurement(QtCore.QThread):
             + str(round(self.df_data["resistivity"].mean(), 4))
             + " +- "
             + str(round(self.df_data["resistivity"].std(), 4))
-            + ") Ohm m\t"
+            + ") Ohm cm\t"
             + "Average Conductivity: ("
             + str(round(self.df_data["conductivity"].mean(), 4))
             + " +- "
             + str(round(self.df_data["conductivity"].std(), 4))
-            + ") S/m"
+            + ") S/cm"
         )
 
         line07 = "### Measurement data ###"
@@ -281,6 +281,9 @@ class SheetResistanceMeasurement(QtCore.QThread):
             + "_res"
             + ".csv"
         )
+
+        # Convert to mA
+        self.df_data["applied_current"] = self.df_data["applied_current"] * 1000
 
         # Format the dataframe for saving (no. of digits)
         self.df_data["applied_current"] = self.df_data["applied_current"].map(
