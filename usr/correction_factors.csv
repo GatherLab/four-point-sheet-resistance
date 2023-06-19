@@ -1,0 +1,58 @@
+Source: https://www.ossila.com/pages/sheet-resistance-theory
+shape	width_over_probe_spacing	length_over_width	correction_factor
+rectangular	1.0	1	
+rectangular	1.0	2	
+rectangular	1.0	3	0.2204
+rectangular	1.0	4	0.2205
+rectangular	1.25	1	
+rectangular	1.25	2	
+rectangular	1.25	3	0.2751
+rectangular	1.25	4	0.2751
+rectangular	1.5	1	
+rectangular	1.5	2	0.3263
+rectangular	1.5	3	0.3286
+rectangular	1.5	4	0.3286
+rectangular	1.75	1	
+rectangular	1.75	2	0.3794
+rectangular	1.75	3	0.3803
+rectangular	1.75	4	0.3803
+rectangular	2.0	1	
+rectangular	2.0	2	0.4292
+rectangular	2.0	3	0.4297
+rectangular	2.0	4	0.4297
+rectangular	2.5	1	
+rectangular	2.5	2	0.5192
+rectangular	2.5	3	0.5194
+rectangular	2.5	4	0.5194
+rectangular	3.0	1	0.5422
+rectangular	3.0	2	0.5957
+rectangular	3.0	3	0.5958
+rectangular	3.0	4	0.5958
+rectangular	4.0	1	0.687
+rectangular	4.0	2	0.7115
+rectangular	4.0	3	0.7115
+rectangular	4.0	4	0.7115
+rectangular	5.0	1	0.7744
+rectangular	5.0	2	0.7887
+rectangular	5.0	3	0.7887
+rectangular	5.0	4	0.7887
+rectangular	7.5	1	0.8846
+rectangular	7.5	2	0.8905
+rectangular	7.5	3	0.8905
+rectangular	7.5	4	0.8905
+rectangular	10.0	1	0.9313
+rectangular	10.0	2	0.9345
+rectangular	10.0	3	0.9345
+rectangular	10.0	4	0.9345
+rectangular	15.0	1	0.9682
+rectangular	15.0	2	0.9696
+rectangular	15.0	3	0.9696
+rectangular	15.0	4	0.9696
+rectangular	20.0	1	0.9822
+rectangular	20.0	2	0.983
+rectangular	20.0	3	0.983
+rectangular	20.0	4	0.983
+rectangular	40.0	1	0.9955
+rectangular	40.0	2	0.9957
+rectangular	40.0	3	0.9957
+rectangular	40.0	4	0.9957
