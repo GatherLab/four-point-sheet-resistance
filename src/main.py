@@ -157,12 +157,26 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # -------------------------------------------------------------------- #
         # --------------------- Set Standard Parameters ---------------------- #
         # -------------------------------------------------------------------- #
+        # Load correction factors
+        correction_factors_file_path = os.path.join(
+            Path(__file__).parent.parent,
+            "usr",
+            "correction_factors.csv",
+        )
+
+        correction_factors = pd.read_csv(
+            correction_factors_file_path,
+            delimiter="\t",
+            skiprows=1,
+            index_col=False,
+        )
 
         self.sw_activate_output_pushButton.setCheckable(True)
         self.sw_start_measurement_pushButton.setCheckable(True)
 
         # Sample Geometry
-        self.sw_select_sample_geometry_ComboBox.addItem("Rectangular")
+        for shape in correction_factors["shape"].unique():
+            self.sw_select_sample_geometry_ComboBox.addItem(shape)
 
         # Long Side length
         self.sw_long_side_length_spinBox.setMinimum(0)
@@ -335,6 +349,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """
         function to allow display of both coordinates for figures with two axis
         """
+
         # current and other are axes
         def format_coord(x, y):
             # x, y are data coordinates
@@ -551,7 +566,7 @@ if __name__ == "__main__":
     import ctypes
 
     if not sys.platform.startswith("linux"):
-        myappid = u"mycompan.myproduct.subproduct.version"  # arbitrary string
+        myappid = "mycompan.myproduct.subproduct.version"  # arbitrary string
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
     app_icon = QtGui.QIcon()
