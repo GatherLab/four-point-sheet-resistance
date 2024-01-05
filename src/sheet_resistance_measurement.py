@@ -89,7 +89,7 @@ class SheetResistanceMeasurement(QtCore.QThread):
         # The finite width correction has to be done based on empirical
         # values (for rectangular shaped samples). Those can be found in
         # a separate file.
-        if self.measurement_parameters["sample_geometry"] == "Rectangular":
+        if self.measurement_parameters["sample_geometry"] == "rectangular":
             finite_thickness_correction = np.log(2) / np.log(
                 np.sinh(
                     self.measurement_parameters["thickness"]
@@ -147,7 +147,7 @@ class SheetResistanceMeasurement(QtCore.QThread):
             self.df_data.loc[i, "measured_voltage"] = voltage_reading
 
             # Check the shape of the sample
-            if self.measurement_parameters["sample_geometry"] == "Rectangular":
+            if self.measurement_parameters["sample_geometry"] == "rectangular":
                 # Actual Calculation
                 # For the thickness a conversion to cm is needed (10-7) to get the units right
                 resistivity = (

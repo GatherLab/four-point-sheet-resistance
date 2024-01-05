@@ -466,7 +466,8 @@ class Ui_MainWindow(object):
             "}"
         )
         self.sw_sheet_resistance_label.setObjectName("sw_sheet_resistance_label")
-        self.sw_sheet_resistance_label.setText("Sheet Resistance:\t\t")
+        # self.sw_sheet_resistance_label.setText("Sheet Resistance:\t\t")
+        self.sw_sheet_resistance_label.setText("Sheet Resistance:\t")
         self.sw_sheet_resistance_label_HLayout.addWidget(self.sw_sheet_resistance_label)
 
         self.sw_sheet_resistance_label_number = QtWidgets.QLabel(self.setup_widget)
@@ -498,7 +499,7 @@ class Ui_MainWindow(object):
             "}"
         )
         self.sw_resistivity_label.setObjectName("sw_resistivity_label")
-        self.sw_resistivity_label.setText("Resistivity:\t\t")
+        self.sw_resistivity_label.setText("Resistivity:\t")
         self.sw_resistivity_label_HLayout.addWidget(self.sw_resistivity_label)
 
         self.sw_resistivity_label_number = QtWidgets.QLabel(self.setup_widget)
@@ -509,7 +510,7 @@ class Ui_MainWindow(object):
             "}"
         )
         self.sw_resistivity_label_number.setObjectName("sw_resistivity_label_number")
-        self.sw_resistivity_label_number.setText("--.-- Ω cm")
+        self.sw_resistivity_label_number.setText("--.-- mΩ cm")
         self.sw_resistivity_label_HLayout.addWidget(self.sw_resistivity_label_number)
 
         self.vertical_layout_1.addLayout(self.sw_resistivity_label_HLayout)
@@ -528,7 +529,7 @@ class Ui_MainWindow(object):
             "}"
         )
         self.sw_conductivity_label.setObjectName("sw_conductivity_label")
-        self.sw_conductivity_label.setText("Conductivity:\t\t")
+        self.sw_conductivity_label.setText("Conductivity:\t")
         self.sw_conductivity_label_HLayout.addWidget(self.sw_conductivity_label)
 
         self.sw_conductivity_label_number = QtWidgets.QLabel(self.setup_widget)
