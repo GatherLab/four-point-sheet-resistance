@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         """
 
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1200, 800)
+        # MainWindow.resize(100, 80)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding
         )
@@ -47,6 +47,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
+        MainWindow.setFixedWidth(1400)
         MainWindow.setStyleSheet(
             "QWidget {\n"
             "            background-color: rgb(44, 49, 60);\n"
@@ -155,7 +156,7 @@ class Ui_MainWindow(object):
         # self.gatherlab_picture = QtWidgets.QWidget(self.centralwidget)
         # self.gatherlab_picture.setObjectName("gatherlab_picture")
         self.gatherlab_label = QtWidgets.QLabel()
-        pixmap = QtGui.QPixmap("icons/blue_cropped.png")
+        pixmap = QtGui.QPixmap("icons/logo_cropped.png")
         self.gatherlab_label.setPixmap(pixmap)
         self.gatherlab_label.setScaledContents(True)
         # self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
